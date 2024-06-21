@@ -129,7 +129,7 @@ This script handles the token sequences by padding or truncating them to a fixed
 
 The dataset contains pairs of questions and answers related to COVID-19 and general health topics. Each question and answer pair is preprocessed and tokenized for input into the BERT model.
 
-**Link to the dataset:** [Dataset Link](#) (Replace `#` with the actual URL)
+**Link to the dataset:** [Dataset Link](https://github.com/Freedisch/ml-formativeChatbot/blob/main/Covid-QA%20FAQ.csv)
 
 ## Model Training
 
