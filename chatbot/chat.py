@@ -1,10 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
 
-
-#### Libraries that we use for giving the response
 import nltk
-# import random
 import numpy as np
 import json
 import pickle
@@ -17,23 +12,14 @@ nltk.download('wordnet')
 
 lemmatizer=WordNetLemmatizer() 
 
-## load the json file and store in a variable
-# with open('Backend/breastCancer.json') as json_file:
 with open('CovidQA.json') as json_file:
     intents = json.load(json_file)
 
-
-# words=pickle.load(open('Backend/words.pkl','rb'))  ## load unique word vocabulary
 words=pickle.load(open('Words.pkl','rb'))
-# classes=pickle.load(open('Backend/classes.pkl','rb')) ## load unique clases
 classes=pickle.load(open('Classes.pkl','rb'))
-# model=load_model('Backend/chatbotmodel.h5') ## load the train model
 model=load_model('ChatbotModel.h5')
 
 correctQues = ""
-    
-
-## correct spelling by using edit distance algorithm and replace the word with minimum edit distance
 def correct_spelling(sentence):
   sentence_list = []
   for sent in sentence.split():
@@ -51,9 +37,6 @@ def correct_spelling(sentence):
   return ' '.join(sentence_list)
 
 
-## preProcessing the question by correcting
-## tokenize the correct question
-## lemmatize the tokenize question
 def clean_up_sentence(sentence):
   global correctQues
   sentence = correct_spelling(sentence)
@@ -62,9 +45,6 @@ def clean_up_sentence(sentence):
   sentence_words=[lemmatizer.lemmatize(word) for word in sentence_words]
   return sentence_words
 
-
-## store the word counts in a bag of word list
-## and return numpy array 
 def bag_of_words(sentence):
   sentence_words=clean_up_sentence(sentence)
   bag=[0]*len(words)
@@ -74,8 +54,6 @@ def bag_of_words(sentence):
         bag[i]=1
   return np.array(bag)
 
-## predict the class using the train model and the bag of word array 
-## and return the result with the highest probability
 def predict_class(sentence):
   bow=bag_of_words(sentence)
   res=model.predict(np.array([bow]))[0]
@@ -87,8 +65,6 @@ def predict_class(sentence):
     return_list.append({'intent': classes[r[0]],'probability':str(r[1])})
   return return_list
 
-
-## return the correct response by using tags and return correct question, index and response
 def get_response(intents_list,intents_json):
     global correctQues
     result = None
@@ -103,8 +79,6 @@ def get_response(intents_list,intents_json):
             break
     return result,ind,correctQues
 
-
-## main function
 def main_(message:str):
     ints=predict_class(message)
     if len(ints) > 0:
