@@ -1,0 +1,9 @@
+fastapi
+joblib
+jsonschema
+keras
+nltk
+streamlit
+streamlit-chat
+tensorflow
+transformers
