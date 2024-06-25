@@ -156,7 +156,7 @@ Performance metrics can be evaluated using the loss values printed during traini
 
 ## Accessing the Chatbot
 
-**Link to access the chatbot:** `docker pull freedisch/ml_pipeline:latest` (Need: Linux\ARM64 machine)
+**Link to access the chatbot:** [bot link](https://deploypy-8xvyhjrgtpqykxsqvmwugt.streamlit.app/)
 
 ## Conclusion
 
