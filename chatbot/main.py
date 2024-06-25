@@ -7,8 +7,6 @@ from chat import main_
 # import nltk
 
 app = FastAPI()
-# port = 8080
-# Allow all origins
 origins = ["*"]
 
 app.add_middleware(
