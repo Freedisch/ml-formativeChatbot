@@ -39,7 +39,7 @@ if isSend:
     st.session_state.past.append(user_input)
     data = {'question':user_input}
     res = requests.post(HOST+ENDPOINT1,json=data)
-    data = json.loads(res.text) 
+    data = json.load(res.text) 
     index = data['data'][1]
     question = data['data'][2]
     st.session_state.ind = index
