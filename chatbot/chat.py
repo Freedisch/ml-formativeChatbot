@@ -3,7 +3,7 @@ import nltk
 import numpy as np
 import json
 import pickle
-import utils
+import chat
 from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import load_model
 
@@ -29,7 +29,7 @@ def correct_spelling(sentence):
         n = len(sent)
         m = len(w)
         dp = [[-1 for i in range(m + 1)] for j in range(n + 1)]
-        diff = utils.minDis(sent, w, n, m, dp)
+        diff = chat.minDis(sent, w, n, m, dp)
         if dist > diff:
             dist = diff
             word = w
