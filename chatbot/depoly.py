@@ -3,7 +3,7 @@ from streamlit_chat import message
 import requests
 import json
 
-HOST = 'https://chat-bot-backend-an9j.onrender.com/api'
+HOST = 'https://ml-formativechatbot.onrender.com/api'
 ENDPOINT1 = '/predict'  
 url ='https://rbc.gov.rw/publichealthbulletin/img/posts/015f5e940dc781f2ad1e40c56fe38d561588314433.jpg'
 st.image(url, width=750)
