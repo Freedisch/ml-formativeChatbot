@@ -22,8 +22,8 @@ with open('CovidQA.json') as json_file:
     intents = json.load(json_file)
 
 # Load pre-trained model and supporting files
-words = pickle.load(open('Words.pkl', 'rb'))
-classes = pickle.load(open('Classes.pkl', 'rb'))
+words = pickle.load(open('Tokens.pkl', 'rb'))
+classes = pickle.load(open('Labels.pkl', 'rb'))
 model = load_model('ChatbotModel.h5')
 
 # Load BERT tokenizer and model
