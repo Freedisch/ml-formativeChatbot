@@ -18,7 +18,7 @@ nltk.download('wordnet')
 lemmatizer = WordNetLemmatizer()
 
 # Load intents JSON file
-with open('CovidQA.json') as json_file:
+with open('Covid.json') as json_file:
     intents = json.load(json_file)
 
 # Load pre-trained model and supporting files
