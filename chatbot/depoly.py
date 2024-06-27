@@ -38,7 +38,7 @@ def get_bert_embedding(sentence):
 
 def extract_class(sentence):
     embedding = get_bert_embedding(sentence)
-    res = model.extract_class(embedding)[0]
+    res = model.predict(embedding)[0]  # Change from extract_class to predict
     ERROR_THRESHOLD = 0.20
     results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
     results.sort(key=lambda x: x[1], reverse=True)
