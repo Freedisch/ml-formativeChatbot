@@ -115,6 +115,7 @@ def get_response(intents_list, intents_json):
 # Define main function
 def main_(message: str):
     ints = predict_class(message)
+    print(ints)
     if len(ints) > 0:
         return get_response(ints, intents)
     else:
