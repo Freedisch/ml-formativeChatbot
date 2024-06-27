@@ -114,7 +114,8 @@ def get_response(intents_list, intents_json):
 
 # Define main function
 def main_(message: str):
-    ints = predict_class(message)
+    #ints = predict_class(message)
+    ints = [{'intent': 'symptoms', 'probability': '0.95'}]
     print(len(ints))
     print("okd")
     if len(ints) > 0:
