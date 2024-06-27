@@ -23,10 +23,6 @@ class QA(BaseModel):
 
 @app.post('/api/predict')
 def predict(request: QA):
-    """
-        requestBody contain the question
-        in a string fromat and it return the response
-    """
     msg = main_(request.question.lower())
     print(msg)
     return {'data': msg}
