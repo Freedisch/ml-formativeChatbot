@@ -92,7 +92,7 @@ def minDis(s1, s2, n, m, dp):
 # Streamlit app
 url = 'https://rbc.gov.rw/publichealthbulletin/img/posts/015f5e940dc781f2ad1e40c56fe38d561588314433.jpg'
 st.image(url, width=750)
-st.title("Crop Diseases Chat-Bot")
+st.title("Covid 19")
 
 if 'generated' not in st.session_state:
     st.session_state['generated'] = []
